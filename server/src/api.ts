@@ -5,7 +5,6 @@ import bodyParser from 'body-parser';
 import {
   SERVER_PORT,
   SERVER_URL,
-  CORS_ORIGINS,
 } from './constants';
 
 import saleRoute from './routes/sale.router';
@@ -18,7 +17,7 @@ DB.connect().then(() => {
 
 const app = express();
 app.use(cors({
-  origin: CORS_ORIGINS,
+  origin: '*',
 }));
 app.use(bodyParser.urlencoded({
   extended: false,
